@@ -10,9 +10,11 @@ import sys
 
 LINE = "In grandma's kitchen at dusk, the smell of steamed rice and woodsmoke, I sat on a low wooden stool peeling garlic while the cicadas sang outside, certain that summer would never end."
 
-# The gate allows 1 to 280 characters of UTF-8 text, not only whitespace.
+# The gate allows 1 to 280 characters of UTF-8 text, not only whitespace,
+# in a single sentence.
 assert 1 <= len(LINE) <= 280, f"line is {len(LINE)} chars, must be 1-280"
 assert LINE.strip(), "line must not be only whitespace"
+assert LINE.count(".") == 1 and LINE.endswith("."), "line must be one sentence"
 
 
 def main():
